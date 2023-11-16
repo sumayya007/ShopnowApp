@@ -1,0 +1,51 @@
+.user-container{
+    display: flex;
+    flex-direction: column;
+   
+    
+   
+}
+.left{
+  
+}
+.right{
+  padding: 1rem;
+  }
+.userlist caption{
+  font-weight: 500;
+  color: rgb(114, 2, 2);
+  font-size: 1.3rem;
+  text-decoration: underline;
+}
+.userbtn{
+  height: 2.5rem;
+  width:7rem;
+  margin-right:0.5rem;
+}
+.product-container{
+  padding: 1rem;
+  border: 1px solid grey;
+  border-radius: 1rem;
+}
+
+@media screen and (min-width: 800px) {
+  .user-container{
+    flex-direction: row;
+   
+  }
+  .right{
+ 
+    padding: 4rem; 
+  } 
+}
+  @media screen and (max-width: 800px) {
+  .userbtn{
+    margin-top: 0.5rem;
+    height: 2rem;
+    width:6.5rem;
+    font-size: smaller;
+  }
+  
+ 
+  
+  }

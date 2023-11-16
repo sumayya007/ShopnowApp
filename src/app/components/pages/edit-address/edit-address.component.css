@@ -1,0 +1,26 @@
+/* .wrapper{
+    display: flex;
+    flex-direction: row;
+} */
+/* .left{
+    
+    flex-direction: column;
+   
+} */
+.userdetails{
+    padding: 1rem;
+    line-height: 2rem;
+}
+.userdetails button{
+margin-top: 2rem;
+}
+.det{
+    padding: 1rem;
+}
+
+.pay{
+    margin-top: 5%;
+    margin-bottom: 10%;
+    width: 50%;
+   margin-left: 25%;
+}

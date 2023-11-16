@@ -1,0 +1,42 @@
+<div class="user-container">
+    <div class="left">
+        <app-admin-header></app-admin-header>
+    </div>
+    <div class="right">
+      <h3>LIST OF CATEGORIES :</h3>
+      <div class="product-container" >
+    <div class="table-responsive userlist" >
+        <table class="table caption-top">
+            
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let category of categories; let i =index">  
+                    <td>{{i+1}}</td>              
+                    <td>{{category.name}}</td>
+                    <td>
+                                <div>
+                                <button type="button" class="btn btn-outline-primary userbtn" 
+                                   (click)="editCategory(category)">Edit
+                                    <i class="fa-solid fa-pencil" id="edit-icon"></i>
+                                </button>
+                            
+                              <button type="button" class="btn btn-outline-danger userbtn" 
+                              (click)="removeCategory(category)">Remove
+                              <i class="fa-solid fa-beat fa-eraser"></i>
+                            </button>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+      </div>
+      </div>
+    </div>
+</div>
+

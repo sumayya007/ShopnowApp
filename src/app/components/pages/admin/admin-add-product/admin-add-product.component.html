@@ -1,0 +1,75 @@
+<div class="user-container">
+    <div class="left">
+        <app-admin-header></app-admin-header>
+    </div>
+    <div class="right">
+    <div class="product-container" >
+       <form #addProductForm="ngForm" (ngSubmit)="adminAddProduct(addProductForm.value)">
+        <h3>ADD PRODUCT</h3>
+        <div class="table table-responsive">
+           <tr>
+                <td>Enter Product name</td>
+                <td><input type="text" placeholder="Product name" [(ngModel)]="product.name" name="name" required #pname="ngModel"></td>
+            </tr>
+            <div class="msg">
+                <small style="color:red" *ngIf="pname.invalid && pname.touched">Product name is required </small>
+            </div>
+            <tr>
+                <td>Enter Product Price</td>
+                <td><input type="text" placeholder="Product price" [(ngModel)]="product.price" name="price" required #pprice="ngModel"></td>
+            </tr>
+               
+            <div class="msg">
+                <small style="color:red" *ngIf="pprice.invalid && pprice.touched">Product price is required </small>
+            </div>
+            <tr>
+                <td>Enter Product tags</td>
+                <td><input type="text" placeholder="Product Tags" [(ngModel)]="product.tags" name="tags" required #ptags="ngModel">
+                    <!-- <input data-role="tagsinput" #tagfileInput  id="tag" type="text"  placeholder="Product tags"  [(ngModel)]="product.tags" name="tags" required #ptags="ngModel" ></td> -->
+           </tr>
+            <div class="msg">
+                <!-- <small style="color:red" *ngIf="ptags.invalid && ptags.touched">Product tags are required </small> -->
+            </div>
+            <tr>
+                <td>Favorite</td>
+                <td><input type="text" placeholder="Favorite" [(ngModel)]="product.favorite" name="favorite" required #pfavorite="ngModel"></td>
+            </tr>
+            <div class="msg">
+                <small style="color:red" *ngIf="pfavorite.invalid && pfavorite.touched">Mention whether product is favorite or not?</small>
+            </div>
+            <tr>
+                <td>Stars</td>
+                <td><input type="text" placeholder="Product name" [(ngModel)]="product.stars" name="stars" required #pstars="ngModel"></td>
+            </tr>
+            <div class="msg">
+                <small style="color:red" *ngIf="pstars.invalid && pstars.touched">Star rating of product </small>
+            </div>
+            <tr>
+                <td>Enter Product image</td>
+                <td><input #fileInput type="file"  id="" (change)="onFileUpload()" name="imageUrl"  [(ngModel)]="product.imageUrl" #pimage="ngModel" required></td>
+            </tr>
+            <div class="msg">
+                <!-- <small style="color:red" *ngIf="pimage.invalid && pimage.touched">Product image is required </small> -->
+            </div>
+            <tr>
+                <td>Enter Product Category</td>
+                <!-- <td><select name="" id="" >
+                    <option value="" *ngFor="let category of categories" [(ngModel)]="product.category" name="category" required #pcat="ngModel">{{category.name}}</option>
+                </select></td> -->
+                <td>
+                    <select [(ngModel)]="product.category" name="category" #pcat="ngModel">  
+                        <option *ngFor="let category of categories" name="category" [value]="category.name">{{category.name}}</option>  
+                    </select>
+                </td>
+            </tr>
+            <div class="msg">
+                <small style="color:red" *ngIf="pcat.invalid && pcat.touched">Enter product category </small>
+            </div>
+       <tr>
+            <input type="submit" value="Submit"  class="btn btn-danger" style="cursor:pointer"  >
+        </tr>
+       </div>
+       </form>
+      </div>
+      </div>
+</div>

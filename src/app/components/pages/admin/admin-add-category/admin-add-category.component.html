@@ -1,0 +1,27 @@
+<div class="user-container">
+    <div class="left">
+        <app-admin-header></app-admin-header>
+    </div>
+    <div class="right">
+    <div class="product-container" >
+        <h4>ADD CATEGORY</h4>
+       <form #addCategoryForm="ngForm" (ngSubmit)="adminAddCategory(addCategoryForm.value)">
+       
+        <div class="table table-responsive">
+            <tr>
+                <td>Enter Category name :</td>
+                <td><input type="text" placeholder="Category name" [(ngModel)]="category.name" name="name" required #cname="ngModel"></td>
+            </tr>
+            <tr class="msg">
+                <small style="color:red" *ngIf="cname.invalid && cname.touched">Category name is required </small>
+            </tr>
+            <tr>
+                <input type="submit" value="Submit"  class="btn btn-danger" style="cursor:pointer"  >
+            </tr>
+        </div>
+              
+       </form>
+      </div>
+      </div>
+</div>
+

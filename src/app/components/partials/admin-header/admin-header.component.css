@@ -1,0 +1,44 @@
+.container{
+    margin-bottom: 100px;
+    margin-top: -50px;
+    width: 25%;
+    float: left;
+}
+.nav-container{
+    min-width: 20rem;
+    padding-left: 3rem;
+    background-color:rgb(3, 2, 2);
+    
+    
+
+}
+@media screen and (max-width:800px) {
+    .nav-container{
+       
+      
+        width: 100%;
+        color:white;
+        font-weight: 500;
+        margin-bottom: 3rem;
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+        
+    }
+}
+.nav-title{
+  color:white;
+  margin-left: 0.5rem;
+    font-size: larger;
+}
+.navbar-nav .nav-item{
+    
+    list-style: none;
+}
+.nav-item a{
+    color: rgb(252, 252, 252);
+    
+}
+.nav-item{
+    padding: 0.7rem;
+}

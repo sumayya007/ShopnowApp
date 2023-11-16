@@ -1,0 +1,42 @@
+<div class="login-container">
+    <div class="login-content">
+        <form #loginForm="ngForm" id="loginForm" (ngSubmit)="userLogin(loginForm.value)">
+            <div class="login-title">
+                <span>Login</span>
+            </div>
+        <div class="login-group">
+            <div class="login-block">
+                <label>Name</label>
+                <input type="text"  name="name" [(ngModel)]="user.name" required #uname="ngModel" placeholder="Your Name" onfocus="this.placeholder=''" onblur="this.placeholder='Your Name'"/>
+            </div>
+            <div class="msg">
+                <small style="color:red" *ngIf="uname.invalid && uname.touched">Username is required </small>
+            </div>
+        </div>
+        <div class="login-group">
+            <div class="login-block">
+                <label>Email</label>
+                <input type="email" placeholder="Email" name="email" [(ngModel)]="user.email" required #uemail="ngModel"/>
+            </div>
+            <div class="msg">
+                <small style="color:red" *ngIf="uemail.invalid && uemail.touched">Email is required </small>
+            </div>
+        </div>
+        <div class="login-group">
+            <div class="login-block">
+                <label>Password</label>
+                <input type="password" placeholder="Password"  name="password" [(ngModel)]="user.password" #upass="ngModel" required/>
+            </div>
+            <div class="msg">
+                <small style="color:red" *ngIf="upass.invalid && upass.touched">Password is required </small>
+            </div>
+        </div>
+        <div >
+            <input type="submit" value="Login"  class="button" style="cursor:pointer" [disabled]="!loginForm.valid">
+        </div>
+        <div class="msg">
+            <span>Don't have an Account? </span><a routerLink="/register-page">Register Now!</a>
+        </div>
+    </form>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="container">
+<div class="product-body">
+    <form #viewproductform="ngForm">
+    <div class="card-body viewproduct">
+      
+        <div class="left">
+       <img src="{{product.imageUrl}}" alt="" class="pimage">
+        </div>
+        <div class="right">
+            <div class="table ">
+                <tbody>
+                   <tr>
+                       <td><h2><strong>{{product.name}}</strong></h2></td>
+                   </tr>
+                   <tr>
+                    <td><app-star-rating [stars]="product.stars"></app-star-rating></td>
+                   </tr>
+                   <tr>
+                    <td>{{product.tags}}</td>
+                   </tr>
+                   <tr>
+                    <td>{{product.category}}</td>
+                   </tr>
+                   <tr>
+                     <td>{{product.description}}</td>
+                   </tr>
+                   <tr>
+                       <td>Price : {{product.price}}</td>
+                   </tr>
+                   <tr>
+                    <td>Quantity :
+                    <button id="plus" (click)="increaseItemAmount(product)" style="border: none;">+</button>{{product.quantity}}
+                    <button id="minus"(click)="decreaseItemAmount(product)"  style="border: none;">-</button></td>
+                   </tr>
+                 
+                   <tr>
+                    <input type="submit" value="Add to Cart" class="pbutton" (click)="addToCart(viewproductform.value)" >
+                   </tr>
+                </tbody>
+            </div>
+            
+        </div>
+    
+    
+    </div>
+</form>
+</div>
+
+</div>

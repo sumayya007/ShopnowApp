@@ -1,0 +1,93 @@
+<div class="user-container">
+    <div class="left">
+        <app-admin-header></app-admin-header>
+    </div>
+    <div class="right">
+    <div class="product-container" >
+       <form #accountDetailsForm="ngForm">
+        <h4>ADMIN DETAILS</h4>
+        <div class=" table table-responsive" >
+            <tr>
+                <td>Admin email :</td>
+                <td><input type="email" placeholder="email" [(ngModel)]="user[0].email" name="email" required #aemail="ngModel"></td>
+               
+            </tr>
+          
+        
+            <tr>
+                <td>Admin name :</td>
+                <td><input type="text" placeholder="name" [(ngModel)]="user[0].name" name="name" required #aname="ngModel"><tr class="product-block"></td>
+            </tr>
+          
+        
+            <tr>
+                <td>Admin password :</td>
+                <td><input type="password" placeholder="password" [(ngModel)]="user[0].password" name="password" required #apass="ngModel"></td>
+            </tr>
+            <tr>
+                <td>Address :</td>
+                <td><input type="text" placeholder="address" [(ngModel)]="user[0].address" name="address" required #address="ngModel" ></td>
+            </tr>
+        
+            <tr >
+                <input type="submit" value="Update"  (click)="editAdmin(user[0])" class="btn btn-danger" style="cursor:pointer"  >
+            </tr>
+    </div>
+       </form>
+      </div>
+      </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

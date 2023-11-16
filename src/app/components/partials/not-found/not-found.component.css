@@ -1,0 +1,15 @@
+.center img{
+    height: 300px;
+    width: 300px;
+}
+.center{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.card{
+    margin-bottom: 80px;
+}

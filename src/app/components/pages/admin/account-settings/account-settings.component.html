@@ -1,0 +1,90 @@
+<div class="user-container">
+    <div class="left">
+        <app-admin-header></app-admin-header>
+    </div>
+    <div class="right">
+    <div class="product-container" >
+       <form #accountDetailsForm="ngForm" >
+        <h4>ADMIN DETAILS</h4>
+        <div class="table table-responsive userlist" >
+                
+                <tr >
+                    <td><strong>Email :</strong></td>
+                     <td > {{user[0].email}}</td> 
+                  </tr>
+                  <tr >
+                    <td><strong>Admin name :</strong></td>
+                     <td > {{user[0].name}}</td> 
+                  </tr>
+                  <tr >
+                    <td><strong>Password :</strong></td>
+                     <td > {{user[0].password}}</td> 
+                  </tr>
+                  <tr >
+                     <td><strong>Address :</strong></td>
+                      <td > {{user[0].address}}</td> 
+                   </tr>
+                  <tr>
+                    <input type="submit" value="Edit"  (click)="editAdmin(user)" class="btn btn-danger" style="cursor:pointer"  >
+                  </tr>
+             
+        </div>
+        
+        </form>
+           </div>
+      </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

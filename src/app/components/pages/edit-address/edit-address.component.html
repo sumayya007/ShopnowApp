@@ -1,0 +1,27 @@
+<div class="container">
+    <h3>Order Page</h3>
+    <div class="wrapper">
+        <div >
+            <form #edituserform="ngForm">
+            <div class="userdetails">
+
+                 <div class="card det"><strong>Name</strong><input type="text" name="name" class="space" [(ngModel)]="users[0].name" disabled></div>
+                 <div class="card det"><strong>Address</strong><input type="text" name="address" class="space" [(ngModel)]="users[0].address" ></div>
+                 <div>
+                    <button class="btn btn-warning" (click)="changeAddress()">Change Address</button>
+                 </div>
+            </div>
+
+        </form>
+           
+
+        </div>
+       
+       
+    </div>
+    <div>
+        <button class=" pay btn btn-danger" routerLink="/order-page">Move to Payment</button>
+    </div>
+</div>
+
+

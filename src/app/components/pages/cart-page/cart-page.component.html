@@ -1,0 +1,63 @@
+<!-- <app-not-found  *ngif="visible"></app-not-found> -->
+<div class="container" *ngIf="this.cartItems.length>0">
+    <h3>Cart Items</h3>
+    <div class="cartblock" >
+   
+      <div class="left">
+        <div class="table table-responsive">
+          <div class="cartdata">
+            <tr>
+              <th>ProductID</th>
+              <th>ProductName</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>TotalPrice</th>
+              <th>Actions</th>
+            </tr>
+           
+            <tr  *ngFor="let cartItem of cartItems; let i = index ">
+              <td >
+                <img src="{{cartItem.imageUrl}}" alt="" class="roundimg">
+              </td>
+              <td>{{cartItem.name}}</td>
+              <td>{{cartItem.quantity}}</td>
+              <!-- <td> <button id="plus" (click)="increaseItemAmount(cartItem)">+</button>{{cartItem.quantity}} -->
+                <!-- <button id="minus"(click)="decreaseItemAmount(cartItem)">-</button></td> -->
+              <td>{{cartItem.price | currency}}</td>
+              <td>{{cartItem.totalPrice | currency}}</td>
+              <td><button class="btn btn-danger" (click)="removeFromCart(cartItem)">Remove</button></td>
+             
+              
+            </tr>
+            
+          </div>
+         
+      </div>
+      </div>
+      <div class="right" >
+        <h3>Your Orders  </h3>
+        <div class="totalq">
+          <span><strong>Total Quantity :</strong>{{this.totalquantity}}</span>
+        </div>
+        <div class="totalp">
+          <span><strong>Total Price :</strong> {{this.total}}</span>
+        </div>
+        <div class="checkout">
+          <button  type="submit" class="btn btn-danger" (click)="savetocart(this.cartItems,this.total,this.totalquantity)">Proceed to Checkout</button>
+        </div>
+      </div>
+       
+   
+
+
+
+
+
+
+    </div>
+  </div>
+  <div *ngIf="this.cartItems.length==0">
+<app-not-found></app-not-found>
+  </div>
+
+

@@ -1,0 +1,33 @@
+<div class="container">
+    <h3>Order Page</h3>
+    <div class="wrapper">
+        <div class="left">
+            <div class="userdetails">
+
+                 <div class="card det"><strong>Name</strong>{{users[0].name}}</div>
+                 <div class="card det"><strong>Address</strong>{{users[0].address}}</div>
+                 <div>
+                    <button class="btn btn-warning" style="cursor: pointer;" (click)="changeAddress(users[0])">Change Address</button>
+                    <button class="btn btn-primary" style="cursor: pointer;" (click)="setAddress(users[0])">Set Address from map</button>
+                </div>
+
+            </div>
+
+         
+           
+
+        </div>
+        <div class="right">
+            <div class="map-block">
+                <h2>Choose your address on Map</h2>
+            </div>
+            <map></map>
+        </div>
+       
+    </div>
+    <div>
+        <button class=" pay btn btn-danger" routerLink="/order-page">Move to Payment</button>
+        
+    </div>
+</div>
+

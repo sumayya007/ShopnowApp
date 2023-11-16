@@ -1,0 +1,96 @@
+<div >
+    <div >
+        
+            
+            <header>
+                <div class="categories">
+            <ul class="indicator">
+                <li data-filter="all" (click)="categorize('All')" class="active">All</li>
+                <li data-filter="Blazer" (click)="categorize('Schoolbags')">Schoolbags</li>
+                <li data-filter="Shoes" (click)="categorize('Shoes');">Shoes</li>
+                <li data-filter="Makeup" (click)="categorize('Makeup');">Makeup</li>
+                <li data-filter="Accessories" (click)="categorize('Accessories');">Accessories</li>
+                
+            </ul>
+        </div>
+
+        <div class="filter-condition">
+             <div class="input-group w-50">
+                <input class="form-control" type="text" name="" id="" [(ngModel)]="searchInput" (keyup)="filterProducts();">
+                <button class="btn btn-primary" >Search</button>
+            
+             <button (click)="sort('asc')" class="arrow"><i class="fas fa-sort-amount-up"></i></button>
+             <button (click)="sort('desc')" class="arrow"><i class="fas fa-sort-amount-down "></i></button>
+            </div>
+            </div>
+    </header>
+        <!-- <div id="head-block">
+            <span>Sort by:</span>
+            <span>Filter by:</span> -->
+            <!-- <div class="menu">
+                <ul>
+                    <li style="cursor: pointer;" (click)="lowtohigh()">Price Low to High</li>
+                    <li style="cursor: pointer;">Price High to Low</li>
+                </ul>
+            </div>
+        </div> --> 
+    </div>
+    
+<div class="product-wrapper" >
+  
+    
+    <div class="product-data" *ngFor="let product of paginatedData">
+       
+        <div class="product-item" >
+           
+        <div class="product-image">
+            <img src={{product.imageUrl}} alt="" class="pimage" (click)="viewProduct(product)">
+        </div>
+        <div class="product-details">
+            
+            <div class="pname"><strong>{{product.name}}</strong>
+                <span class="favorite {{product.favorite?'':'not'}}">
+                    ❤ 
+                </span></div>
+               
+            <div class="stars">
+                <app-star-rating [stars]="product.stars"></app-star-rating>
+            </div>
+            <div class="pprice"> {{product.price | currency}}</div>
+           
+            <div class="ptags"><span>{{product.tags}}</span></div>
+           
+            
+        </div>
+   
+    </div>
+    <!-- <ul class="items">
+        <li data-category="">
+            <picture>
+                <img src="{{product.imageUrl}}" alt="">
+            </picture>
+            <div class="detail">
+                <p class="icon">
+                    <span><i class=""></i></span>
+                    <span><i class=""></i></span>
+                    <span><i class=""></i></span>
+                </p>
+                <strong>atch</strong>
+                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste facere laboriosam eius error exercitationem dolorem ipsa assumenda aliquam. Consequuntur consequatur sunt omnis minima nisi, sint alias cum voluptate dolorem pariatur.</span>
+                 <small>Buy now</small>
+            </div>
+            <h4>{{product.price | currency}}</h4>
+        </li>
+    </ul> -->
+
+    </div>
+
+    
+</div>
+<div *ngIf="allProducts.length>0 && filteredProducts.length==0" class="empty">
+    <div><img src="https://img.freepik.com/free-vector/man-shopping-supermarket_74855-7612.jpg?w=740&t=st=1694071093~exp=1694071693~hmac=12b4f012763c0d20abfb719d7469f86f8369f71e9e61a2f197407dea30f0b089" alt=""><br>
+    </div>
+        No Search results found
+</div>
+<app-pagination [totalItems]="allProducts.length" [itemsPerPage]="itemsPerPage" [currentPage]="currentPage" (onClick)="changePage($event)"></app-pagination>  
+</div>

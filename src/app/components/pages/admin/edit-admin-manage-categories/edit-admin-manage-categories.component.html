@@ -1,0 +1,57 @@
+<div class="user-container">
+    <div class="left">
+        <app-admin-header></app-admin-header>
+    </div>
+    <div class="right">
+      <h3>LIST OF USERS :</h3>
+      <div class="product-container" >
+    <div class="table-responsive userlist" >
+        <form #editUserForm>
+        <table class="table caption-top">
+            <caption>LIST OF USERS :</caption>
+            <thead>
+              <tr>
+                
+                <th scope="col">Name</th>
+              
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <!-- <tr *ngFor="let user of users; let i =index">  
+                    <td>{{i+1}}</td>              
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.Address}}</td>
+                    <td>
+                                <div>
+                                <button type="button" class="btn btn-outline-primary userbtn" 
+                                   (click)="adminEditUsers(user)">Edit
+                                    <i class="fa-solid fa-pencil" id="edit-icon"></i>
+                                </button>
+                            
+                             
+                            </div>
+                    </td>
+                </tr> -->
+                <tr>
+                    <td><strong>Name</strong><input type="text" name="name" class="space" [(ngModel)]="category[0].name" ></td>
+                   
+                    <td>
+                        <div>
+                            <button type="button" class="btn btn-outline-primary userbtn" 
+                               (click)="adminEditCategory(category[0])">Update
+                                <i class="fa-solid fa-pencil" id="edit-icon"></i>
+                            </button>
+                        
+                         
+                        </div> 
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+      </div>
+</div>
+

@@ -1,0 +1,43 @@
+<div class="register-container">
+    <div class="register-content">
+        <form #registerForm="ngForm" (ngSubmit)="userRegister(registerForm.value)">
+            <div class="register-title">
+                <span>Register</span>
+            </div>
+        <div class="register-group">
+            <div class="register-block">
+            <label>Name</label>
+            <input type="text" placeholder="Name" name="name" [(ngModel)]="user.name" required #rname="ngModel"/>
+            </div>
+            <div class="msg">
+                <small style="color:red" *ngIf="rname.invalid && rname.touched">Username is required </small>
+            </div>
+        </div>
+        <div class="register-group">
+            <div class="register-block">
+            <label>Email</label>
+            <input type="email" placeholder="Email" name="email" [(ngModel)]="user.email" required #remail="ngModel"/>
+            </div>
+            <div class="msg">
+                <small style="color:red" *ngIf="remail.invalid && remail.touched">Email is required </small>
+            </div>
+        </div>
+        <div class="register-group">
+            <div class="register-block">
+            <label>Password</label>
+            <input type="password" placeholder="Password" name="password" [(ngModel)]="user.password" required #rpass="ngModel"/>
+            </div>
+            <div class="msg">
+                <small style="color:red" *ngIf="rpass.invalid && rpass.touched">Password is required </small>
+            </div>
+        </div>
+        <div >
+            <input type="submit" value="Register"  class="button" style="cursor:pointer" [disabled]="!registerForm.valid">
+        </div>
+        <div class="msg">
+            <span>Already Registered? </span><a routerLink="/login-page">Login Now!</a>
+        </div>
+    </form>
+    </div>
+</div>
+

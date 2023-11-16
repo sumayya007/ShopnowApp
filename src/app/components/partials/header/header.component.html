@@ -1,0 +1,28 @@
+<header>
+<div class="container">
+    <a routerLink="/" class="logo" routerLink="/home-page">ShopNow</a>
+    <nav>
+      <ul>
+        <li   style="cursor: pointer;"><a routerLink="/product-page" *ngIf="auth.loggedIn() && !auth.role()">Products</a></li>
+        <li class="menu-container">
+          <a href="" *ngIf="auth.loggedIn() && !auth.role()">{{user.name}}</a>
+          <div class="menu" *ngIf="auth.loggedIn() && !auth.role()">
+              <a routerLink="/dashboard" *ngIf="auth.loggedIn()">Profile</a>
+              <a routerLink="/cart-page" *ngIf="auth.loggedIn()">Orders</a>
+              <button type="button" class="btn btn-danger logbtn"  *ngIf="auth.loggedIn()" (click)="logout()">Logout</button>
+              
+          </div>
+      </li>
+        <li ><a  routerLink="/login-page" *ngIf="!auth.loggedIn()">Login</a></li> 
+        <li><a routerLink="/about-page" *ngIf="!auth.loggedIn()">About</a></li>
+        <li class="menu-container"><a routerLink="/admin-dashboard" *ngIf="auth.role()"><i class="fa fa-user" aria-hidden="true"></i> Admin</a>
+              <div class="menu">
+                <button type="button" class="btn btn-danger logbtn"  *ngIf="auth.loggedIn()" (click)="logout()" style="margin-top: 20px;" >Logout</button>
+              </div>
+        </li>
+       <li><a routerLink="/cart-page" *ngIf="auth.loggedIn() && !auth.role()"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span id="totalq">{{this.total}}</span></a></li>
+
+      </ul>
+    </nav>
+</div>
+</header>
