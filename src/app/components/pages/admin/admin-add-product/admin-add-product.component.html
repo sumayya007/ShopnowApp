@@ -46,7 +46,7 @@
             </div>
             <tr>
                 <td>Enter Product image</td>
-                <td><input #fileInput type="file"  id="" (change)="onFileUpload()" name="imageUrl"  [(ngModel)]="product.imageUrl" #pimage="ngModel" required></td>
+                <td><input #fileInput type="file"  id=""  name="imageUrl"  [(ngModel)]="product.imageUrl" #pimage="ngModel" required></td>
             </tr>
             <div class="msg">
                 <!-- <small style="color:red" *ngIf="pimage.invalid && pimage.touched">Product image is required </small> -->
